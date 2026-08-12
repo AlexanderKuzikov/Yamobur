@@ -142,6 +142,13 @@ h2.sub { font-size: 20px; margin: 34px 0 6px; }
 .article ul, .article ol { margin: 12px 0 12px 22px; }
 .article li { margin-bottom: 6px; }
 
+/* ---------- FAQ (details/summary) ---------- */
+.article details { border: 1px solid var(--line); border-radius: 8px; margin: 10px 0; background: #fafbfc; }
+.article summary { cursor: pointer; font-weight: 600; padding: 14px 18px; color: var(--text); }
+.article summary:hover { color: var(--accent-dark); }
+.article details[open] summary { border-bottom: 1px solid var(--line); }
+.article details p { padding: 12px 18px 16px; margin: 0; }
+
 /* ---------- CTA ---------- */
 .cta { background: linear-gradient(120deg, var(--dark), var(--dark2)); color: #fff; text-align: center; padding: 56px 20px; border-radius: 12px; }
 .cta h2 { font-size: 30px; margin-bottom: 10px; }
