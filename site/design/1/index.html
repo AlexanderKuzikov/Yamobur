@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Чертёж — вариант главной</title>
+<meta name="description" content="Светлый индустриальный вариант: сетка, моно-подписи, оранжевый акцент.">
+<style>
+:root{
+  --paper:#f2f0e9; --ink:#16181a; --muted:#6c6961; --line:#d8d2c4;
+  --accent:#d9481f; --mono:ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:16px/1.55 "Segoe UI",system-ui,sans-serif}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600;border:1px solid var(--ink);transition:background .15s,color .15s}
+.btn:hover{background:var(--accent);border-color:var(--accent)}
+.btn.line{background:transparent;color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--paper)}
+
+/* header */
+.top{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:10}
+.top .wrap{display:flex;align-items:center;gap:32px;min-height:74px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;white-space:nowrap;padding:8px 0}
+.brand b{font-size:19px;letter-spacing:-.01em}
+.brand span{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em}
+.nav{display:flex;gap:26px;margin-left:auto;overflow-x:auto}
+.nav a{font-size:14px;text-decoration:none;color:var(--muted);white-space:nowrap;padding:12px 0;border-bottom:1px solid transparent}
+.nav a:hover{color:var(--ink);border-color:var(--accent)}
+.phone{font-weight:700;text-decoration:none;white-space:nowrap;font-size:17px;padding:10px 0}
+
+/* hero */
+.hero{border-bottom:1px solid var(--line);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;background-position:-1px -1px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:end;padding-top:64px;padding-bottom:64px}
+.kicker{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.kicker::before{content:"";width:34px;height:1px;background:var(--accent)}
+h1{font-size:clamp(34px,4.4vw,58px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:15ch}
+.lead{margin-top:24px;font-size:18px;color:#3d3f41;max-width:52ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+figure{margin:0}
+.frame{position:relative;border:1px solid var(--ink);padding:10px;background:var(--paper)}
+.frame::before,.frame::after{content:"+";position:absolute;font-family:var(--mono);font-size:14px;color:var(--accent);line-height:1}
+.frame::before{top:-8px;left:-8px}
+.frame::after{bottom:-8px;right:-8px}
+.frame img{width:100%;height:420px;object-fit:cover}
+figcaption{margin-top:12px;display:flex;justify-content:space-between;gap:12px}
+
+/* stats */
+.stats{border-bottom:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);padding-top:0;padding-bottom:0}
+.stat{padding:24px 24px 24px 0;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:30px;letter-spacing:-.02em;line-height:1.1}
+.stat span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--muted)}
+
+/* sections */
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:20px;margin-bottom:36px}
+.sec-head h2{font-size:clamp(24px,2.6vw,34px);letter-spacing:-.025em;font-weight:700}
+.sec-head .num{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.1em}
+
+/* services */
+.srv{border-top:1px solid var(--ink)}
+.srv a{display:grid;grid-template-columns:56px 1.05fr 1.4fr 24px;gap:24px;align-items:start;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.srv a:hover{background:#eae6da}
+.srv .n{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:4px}
+.srv h3{font-size:19px;font-weight:600;letter-spacing:-.01em}
+.srv p{font-size:15px;color:var(--muted)}
+.srv .arr{font-size:18px;color:var(--accent);justify-self:end;padding-top:2px}
+
+/* machines */
+.mach{display:grid;grid-template-columns:300px 1fr;gap:36px;padding:28px 0;border-top:1px solid var(--line)}
+.mach:first-of-type{border-top:1px solid var(--ink)}
+.mach img{width:100%;height:210px;object-fit:cover;border:1px solid var(--line)}
+.mach h3{font-size:22px;letter-spacing:-.02em;margin-bottom:6px}
+.mach .sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+.spec{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid var(--line);padding-top:16px}
+.spec dt{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
+.spec dd{font-size:15px;font-weight:600;margin-top:2px}
+.price{font-family:var(--mono);font-size:14px;margin-top:16px;color:var(--ink)}
+.price b{font-size:17px}
+
+/* works */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.work img{width:100%;height:180px;object-fit:cover;filter:grayscale(.15)}
+.work h3{font-size:16px;margin-top:12px;font-weight:600}
+.work p{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* cta */
+.cta{background:var(--ink);color:var(--paper);padding:64px 0;border:0}
+.cta .wrap{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:28px}
+.cta h2{font-size:clamp(26px,3vw,40px);letter-spacing:-.03em;font-weight:700;max-width:18ch}
+.cta p{color:#b9b6ae;margin-top:10px}
+.cta .big{font-size:clamp(24px,2.6vw,34px);font-weight:700;text-decoration:none;border-bottom:2px solid var(--accent);padding:8px 0 4px}
+.cta .side{text-align:right}
+.cta .side .mono{color:#8f8b82}
+
+/* footer */
+footer{padding:32px 0;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
+footer a{text-decoration:none;padding:15px 0;display:inline-block}
+
+@media(max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:32px;padding-top:44px;padding-bottom:44px}
+  .frame img{height:320px}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .stat{border-right:0;border-bottom:1px solid var(--line);padding:18px 0}
+  .stat:nth-child(odd){border-right:1px solid var(--line);padding-right:16px}
+  .srv a{grid-template-columns:36px 1fr 20px;gap:12px}
+  .srv p{grid-column:2/4;margin-top:6px}
+  .mach{grid-template-columns:1fr;gap:20px}
+  .mach img{height:240px}
+  .spec{grid-template-columns:repeat(2,1fr)}
+  .works{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  .top .wrap{flex-wrap:wrap;gap:8px 16px;padding:10px 0}
+  .brand span{display:none}
+  .nav{order:3;width:100%;margin:0;padding-bottom:2px;gap:18px}
+  .phone{margin-left:auto;font-size:16px}
+  .works{grid-template-columns:1fr}
+  .cta .side{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../../index.html"><b>Ямобур-вездеход</b><span>Гефест · Пермь</span></a>
+    <nav class="nav">
+      <a href="../../harakteristiki.html">Характеристики</a>
+      <a href="../../ceny.html">Цены</a>
+      <a href="../../raboty.html">Работы</a>
+      <a href="../../statyi.html">Статьи</a>
+    </nav>
+    <a class="phone" href="tel:+73422776576">+7 (342) 277-65-76</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="kicker mono">Аренда бурильно-крановых машин</div>
+      <h1>Бурение скважин и монтаж свай в любых условиях</h1>
+      <p class="lead">Полноприводные автоямобуры на базе Урал 5557 и КАМАЗ. Работаем круглый год, в том числе на промороженном грунте.</p>
+      <div class="actions">
+        <a class="btn" href="tel:+73422776576">Позвонить</a>
+        <a class="btn line" href="../../ceny.html">Цены на аренду</a>
+      </div>
+    </div>
+    <figure>
+      <div class="frame"><img src="../../img/atWork600.jpg" alt="Автоямобур в лесу на бурении скважин"></div>
+      <figcaption><span class="mono">Урал 5557 · 6×6</span><span class="mono">Стрела 14 м</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>2008</b><span>год с которого работаем</span></div>
+    <div class="stat"><b>3</b><span>машины в парке</span></div>
+    <div class="stat"><b>800</b><span>мм максимальный диаметр</span></div>
+    <div class="stat"><b>4 ч</b><span>минимальный заказ</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">01</span><h2>Услуги</h2></div>
+    <div class="srv">
+      <a href="../../stati/burenie-skvazhin-kolodcy-opory-vl.html"><span class="n">01</span><h3>Бурение скважин для буронабивных свай</h3><p>Диаметры 100–800 мм, грунты до 3-й категории.</p><span class="arr">→</span></a>
+      <a href="../../stati/montazh-vintovykh-svaj.html"><span class="n">02</span><h3>Монтаж винтовых свай</h3><p>Ствол 60–325 мм, сваи «Гефест» и других заводов.</p><span class="arr">→</span></a>
+      <a href="../../stati/lidernoe-burenie.html"><span class="n">03</span><h3>Лидерное бурение</h3><p>Мёрзлые грунты, плотные пески, стеснённая застройка.</p><span class="arr">→</span></a>
+      <a href="../../stati/burenie-skvazhin-kolodcy-opory-vl.html"><span class="n">04</span><h3>Бурение скважин для колодцев</h3><p>До 1200 мм, глубина до 30 метров.</p><span class="arr">→</span></a>
+      <a href="../../stati/burenie-skvazhin-kolodcy-opory-vl.html"><span class="n">05</span><h3>Установка опор ВЛ</h3><p>Монтаж с люльки, бурение под опоры в любых грунтах.</p><span class="arr">→</span></a>
+      <a href="../../stati/buronabivnye-svai-uplotneniya.html"><span class="n">06</span><h3>Буронабивные сваи уплотнения</h3><p>Раскатка скважин без выноса грунта на поверхность.</p><span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="machines">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">02</span><h2>Техника</h2></div>
+
+    <div class="mach">
+      <img src="../../img/rabota-svai.jpg" alt="Автоямобур Урал 5557 на объекте">
+      <div>
+        <h3>Автоямобур Урал 5557</h3>
+        <p class="sub">Аналог УБМ-85, крановое шасси 6×6</p>
+        <dl class="spec">
+          <div><dt>Стрела</dt><dd>14 м</dd></div>
+          <div><dt>Момент</dt><dd>5 т·м</dd></div>
+          <div><dt>Бурение</dt><dd>до 30 м</dd></div>
+          <div><dt>Диаметр</dt><dd>до 1200 мм</dd></div>
+          <div><dt>Сваи</dt><dd>159–325 мм</dd></div>
+          <div><dt>Цена</dt><dd>договорная</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="mach">
+      <img src="../../img/kamaz-4326.jpg" alt="Ямобур-вездеход КАМАЗ 4326">
+      <div>
+        <h3>Ямобур-вездеход КАМАЗ 4326</h3>
+        <p class="sub">Шасси 4×4, гидрокабестан на втором вылете</p>
+        <dl class="spec">
+          <div><dt>Стрела</dt><dd>10 м</dd></div>
+          <div><dt>Момент</dt><dd>1 т·м</dd></div>
+          <div><dt>Бурение</dt><dd>до 830 мм</dd></div>
+          <div><dt>Сваи</dt><dd>60–114 мм</dd></div>
+          <div><dt>Опоры ВЛ</dt><dd>да</dd></div>
+          <div><dt>Цена</dt><dd>1700 ₽/час</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="mach">
+      <img src="../../img/atWork600.jpg" alt="Автоямобур КАМАЗ 43101 с люлькой">
+      <div>
+        <h3>Автоямобур КАМАЗ 43101</h3>
+        <p class="sub">Установка AICHI D-705, шасси 6×6, монтажная люлька</p>
+        <dl class="spec">
+          <div><dt>Стрела</dt><dd>12 м</dd></div>
+          <div><dt>Момент</dt><dd>1 т·м</dd></div>
+          <div><dt>Бурение</dt><dd>до 10 м</dd></div>
+          <div><dt>Буры</dt><dd>100–830 мм</dd></div>
+          <div><dt>Опоры ВЛ</dt><dd>с люльки</dd></div>
+          <div><dt>Цена</dt><dd>1800 ₽/час</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">03</span><h2>Объекты</h2></div>
+    <div class="works">
+      <div class="work"><img src="../../img/rabota-oktyabrya-1.jpg" alt="Монтаж свай на ул. 25 Октября"><h3>ул. 25 Октября, 106</h3><p>СВС 219/500 и 159/450, Пермь</p></div>
+      <div class="work"><img src="../../img/rabota-savino-1.jpg" alt="Монтаж свай в аэропорту Большое Савино"><h3>Аэропорт Большое Савино</h3><p>СВС-219/550-8000</p></div>
+      <div class="work"><img src="../../img/rabota-rakitnaya-1.jpg" alt="Монтаж свай на ул. Ракитная"><h3>ул. Ракитная, 38</h3><p>ВСГ-3 159/450-7000</p></div>
+      <div class="work"><img src="../../img/rabota-zapolie.jpg" alt="Монтаж свай в д. Заполье"><h3>д. Заполье</h3><p>ВСГ-1 89/300-2500</p></div>
+      <div class="work"><img src="../../img/rabota-lyangasovo.jpg" alt="Монтаж свай на ул. Лянгасова"><h3>ул. Лянгасова, 137</h3><p>ВСГУ-1 89/300-5000</p></div>
+      <div class="work"><img src="../../img/rabota-troitsk-2.jpg" alt="Монтаж свай в с. Троицк"><h3>с. Троицк</h3><p>СВЛ-219/500-6000</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Рассчитаем стоимость под ваш объект</h2>
+      <p>Подскажем машину под грунт и объём работ.</p>
+    </div>
+    <div class="side">
+      <a class="big" href="tel:+73422776576">+7 (342) 277-65-76</a>
+      <p class="mono" style="margin-top:10px">Ежедневно 8:00–20:00 · stas@zavodsvay.ru</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2008–2026 ООО «Гефест». Ямобур-вездеход, Пермь.</span>
+    <span>ул. Промышленная, 115 · <a href="tel:+73422776576">+7 (342) 277-65-76</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Договор — вариант главной</title>
+<meta name="description" content="Светлый B2B-вариант: белый фон, синий акцент, блок расчёта и таблица сравнения.">
+<style>
+:root{
+  --ink:#0f172a; --muted:#526071; --line:#dde4ee; --bg:#f6f8fc;
+  --white:#fff; --blue:#1d4ed8; --blue-dark:#153ea8; --blue-soft:#e8effd;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font:17px/1.6 "Segoe UI",system-ui,sans-serif}
+a{color:var(--blue)}
+img{display:block;max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;border-radius:8px;border:1px solid var(--blue);transition:background .15s}
+.btn:hover{background:var(--blue-dark)}
+.btn.ghost{background:#fff;color:var(--blue);border-color:#b9c8ea}
+.btn.ghost:hover{background:var(--blue-soft)}
+
+/* header */
+.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.top .wrap{display:flex;align-items:center;gap:28px;min-height:76px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);white-space:nowrap;padding:8px 0}
+.brand b{font-size:19px;letter-spacing:-.01em}
+.brand span{font-size:12px;color:var(--muted)}
+.nav{display:flex;gap:24px;margin-left:auto;overflow-x:auto}
+.nav a{font-size:15px;color:var(--muted);text-decoration:none;white-space:nowrap;padding:12px 0}
+.nav a:hover{color:var(--blue)}
+.phone{font-weight:600;text-decoration:none;color:var(--ink);white-space:nowrap;padding:10px 0}
+
+/* hero */
+.hero{background:var(--bg);border-bottom:1px solid var(--line);padding:64px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+h1{font-size:clamp(32px,4vw,52px);line-height:1.08;letter-spacing:-.03em;font-weight:700;max-width:16ch}
+.lead{margin-top:20px;font-size:18px;color:var(--muted);max-width:52ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.checks{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:26px;font-size:14px;color:var(--muted)}
+.checks span{display:flex;align-items:center;gap:8px}
+.checks svg{flex:none;color:var(--blue)}
+
+.calc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;box-shadow:0 10px 30px rgba(15,23,42,.06)}
+.calc h2{font-size:18px;letter-spacing:-.01em;margin-bottom:6px}
+.calc .sub{font-size:13px;color:var(--muted);margin-bottom:18px}
+.calc dl{border-top:1px solid var(--line)}
+.calc .row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.calc dt{color:var(--muted)}
+.calc dd{font-weight:600}
+.calc .note{font-size:12px;color:var(--muted);margin-top:14px}
+.calc .btn{width:100%;margin-top:18px}
+
+/* trust */
+.trust{background:#fff}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:26px;padding-bottom:26px}
+.trust b{display:block;font-size:16px}
+.trust span{font-size:13px;color:var(--muted)}
+
+/* sections */
+section{padding:72px 0}
+.sec-head{max-width:640px;margin-bottom:36px}
+.sec-head h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.025em;font-weight:700}
+.sec-head p{color:var(--muted);margin-top:8px}
+
+/* services */
+.srv{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff;transition:border-color .15s,box-shadow .15s}
+.card:hover{border-color:#b9c8ea;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+.icon{width:44px;height:44px;border-radius:10px;background:var(--blue-soft);color:var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.card h3{font-size:18px;letter-spacing:-.01em;margin-bottom:8px}
+.card p{font-size:15px;color:var(--muted)}
+.card a{display:inline-flex;align-items:center;min-height:44px;margin-top:4px;font-size:14px;font-weight:600;text-decoration:none}
+.card a:hover{text-decoration:underline}
+
+/* table */
+.table-wrap{border:1px solid var(--line);border-radius:12px;overflow-x:auto;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:680px}
+th,td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{background:#f2f5fb;color:var(--muted);font-weight:600;font-size:13px}
+tr:last-child td{border-bottom:0}
+td.num{font-weight:600;font-variant-numeric:tabular-nums}
+td.price{font-weight:700;color:var(--blue)}
+.hint{font-size:12px;color:var(--muted);margin-top:10px;display:none}
+
+/* works */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.work img{width:100%;height:190px;object-fit:cover}
+.work .cap{padding:16px 18px 18px}
+.work h3{font-size:16px;margin-bottom:4px}
+.work p{font-size:13px;color:var(--muted)}
+
+/* cta */
+.cta{background:var(--blue);color:#fff;padding:64px 0;border-radius:0}
+.cta .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px}
+.cta h2{font-size:clamp(26px,3.4vw,42px);letter-spacing:-.03em;line-height:1.1;max-width:18ch;font-weight:700}
+.cta p{margin-top:10px;color:#c9d6f7}
+.cta .side{text-align:right}
+.cta .big{display:block;font-size:clamp(24px,2.8vw,34px);font-weight:700;color:#fff;text-decoration:none;white-space:nowrap;padding:8px 0 4px}
+.cta .side span{display:block;margin-top:8px;font-size:13px;color:#c9d6f7}
+.cta .btn{background:#fff;color:var(--blue);border-color:#fff;margin-top:16px}
+.cta .btn:hover{background:#e8effd}
+
+/* footer */
+footer{background:#0f172a;color:#aab4c4;font-size:13px;padding:22px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+footer a{color:#e6ecf7;text-decoration:none;padding:15px 0;display:inline-block}
+
+@media(max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;gap:36px}
+  .srv{grid-template-columns:1fr 1fr}
+  .trust .wrap{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .srv{grid-template-columns:1fr}
+  .works{grid-template-columns:1fr}
+  .hint{display:block}
+  .cta .side{text-align:left}
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  .top .wrap{flex-wrap:wrap;gap:8px 14px;padding:10px 0}
+  .brand span{display:none}
+  .nav{order:3;width:100%;margin:0;gap:18px}
+  .phone{margin-left:auto;font-size:16px}
+  section{padding:52px 0}
+  .hero{padding:44px 0}
+  .calc{padding:22px}
+  .cta .big{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../../index.html"><b>Ямобур-вездеход</b><span>Гефест · Пермь</span></a>
+    <nav class="nav">
+      <a href="../../harakteristiki.html">Характеристики</a>
+      <a href="../../ceny.html">Цены</a>
+      <a href="../../raboty.html">Работы</a>
+      <a href="../../statyi.html">Статьи</a>
+    </nav>
+    <a class="phone" href="tel:+73422776576">+7 (342) 277-65-76</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Аренда ямобура и монтаж свай в Перми</h1>
+      <p class="lead">Собственный парк бурильно-крановых машин. Работаем по договору, с закрывающими документами, круглый год.</p>
+      <div class="actions">
+        <a class="btn" href="tel:+73422776576">Позвонить</a>
+        <a class="btn ghost" href="../../ceny.html">Смотреть цены</a>
+      </div>
+      <div class="checks">
+        <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>С 2008 года</span>
+        <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>Свой парк, без посредников</span>
+        <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>Минимальный заказ 4 часа</span>
+      </div>
+    </div>
+    <aside class="calc">
+      <h2>Ориентир по стоимости</h2>
+      <p class="sub">Точный расчёт — по телефону за 15 минут</p>
+      <dl>
+        <div class="row"><dt>Аренда машины</dt><dd>от 1 700 ₽/час</dd></div>
+        <div class="row"><dt>Минимальная сумма</dt><dd>7 800 ₽</dd></div>
+        <div class="row"><dt>Доставка</dt><dd>90 ₽/км</dd></div>
+        <div class="row"><dt>Обратная дорога</dt><dd>бесплатно</dd></div>
+      </dl>
+      <a class="btn" href="tel:+79028016576">+7 (902) 801-65-76</a>
+      <p class="note">Гилин Станислав Викторович, приём заказов</p>
+    </aside>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div><b>3 машины</b><span>Урал 5557 и два КАМАЗа</span></div>
+    <div><b>до 30 м</b><span>глубина бурения</span></div>
+    <div><b>до 1200 мм</b><span>диаметр скважин</span></div>
+    <div><b>с 2008</b><span>работаем в Пермском крае</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head"><h2>Услуги</h2><p>Бурение, сваи и опоры ВЛ одной техникой.</p></div>
+    <div class="srv">
+      <article class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="7"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></div>
+        <h3>Бурение под сваи</h3><p>Диаметры 100–800 мм, грунты до 3-й категории.</p>
+        <a href="../../stati/burenie-skvazhin-kolodcy-opory-vl.html">Подробнее →</a>
+      </article>
+      <article class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v14M7 12l5 5 5-5M5 21h14"/></svg></div>
+        <h3>Монтаж винтовых свай</h3><p>Ствол 60–325 мм, сваи «Гефест» и других заводов.</p>
+        <a href="../../stati/montazh-vintovykh-svaj.html">Подробнее →</a>
+      </article>
+      <article class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Лидерное бурение</h3><p>Мёрзлые грунты, плотные пески, стеснённая застройка.</p>
+        <a href="../../stati/lidernoe-burenie.html">Подробнее →</a>
+      </article>
+      <article class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></div>
+        <h3>Скважины для колодцев</h3><p>До 1200 мм и до 30 метров в глубину.</p>
+        <a href="../../stati/burenie-skvazhin-kolodcy-opory-vl.html">Подробнее →</a>
+      </article>
+      <article class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M6 21l6-4 6 4M5 6l7-3 7 3"/></svg></div>
+        <h3>Установка опор ВЛ</h3><p>Монтаж с люльки, бурение под опоры в любых грунтах.</p>
+        <a href="../../stati/burenie-skvazhin-kolodcy-opory-vl.html">Подробнее →</a>
+      </article>
+      <article class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7l8-4 8 4-8 4-8-4zM4 12l8 4 8-4M4 17l8 4 8-4"/></svg></div>
+        <h3>Сваи уплотнения DDS</h3><p>Раскатка скважин без выноса грунта на поверхность.</p>
+        <a href="../../stati/buronabivnye-svai-uplotneniya.html">Подробнее →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="machines" style="background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head"><h2>Техника и ставки</h2><p>Все машины на полноприводных шасси. Ставка указана за час работы.</p></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Машина</th><th>Шасси</th><th>Стрела</th><th>Бурение</th><th>Сваи</th><th>Ставка</th></tr></thead>
+        <tbody>
+          <tr><td>Урал 5557</td><td>6×6</td><td class="num">14 м</td><td class="num">до 30 м</td><td>159–325 мм</td><td class="price">договорная</td></tr>
+          <tr><td>КАМАЗ 4326</td><td>4×4</td><td class="num">10 м</td><td class="num">до 830 мм</td><td>60–114 мм</td><td class="price">1700 ₽/час</td></tr>
+          <tr><td>КАМАЗ 43101</td><td>6×6</td><td class="num">12 м</td><td class="num">до 10 м</td><td>60–114 мм</td><td class="price">1800 ₽/час</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">Таблицу можно прокрутить вбок.</p>
+    <p style="font-size:13px;color:var(--muted);margin-top:12px">Минимальное время заказа — 4 часа. Перегон — 90 ₽/км, обратная дорога бесплатно.</p>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="sec-head"><h2>Объекты</h2><p>Монтаж свай и бурение по Перми и краю.</p></div>
+    <div class="works">
+      <article class="work"><img src="../../img/rabota-oktyabrya-1.jpg" alt="Монтаж свай на ул. 25 Октября"><div class="cap"><h3>ул. 25 Октября, 106</h3><p>СВС 219/500 и 159/450, Пермь</p></div></article>
+      <article class="work"><img src="../../img/rabota-savino-1.jpg" alt="Сваи в аэропорту Большое Савино"><div class="cap"><h3>Аэропорт Большое Савино</h3><p>СВС-219/550-8000</p></div></article>
+      <article class="work"><img src="../../img/rabota-rakitnaya-1.jpg" alt="Монтаж свай на ул. Ракитная"><div class="cap"><h3>ул. Ракитная, 38</h3><p>ВСГ-3 159/450-7000</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Нужен точный расчёт?</h2>
+      <p>Пришлите параметры объекта — рассчитаем смету за 15 минут.</p>
+    </div>
+    <div class="side">
+      <a class="big" href="tel:+73422776576">+7 (342) 277-65-76</a>
+      <span>stas@zavodsvay.ru · ежедневно 8:00–20:00</span>
+      <a class="btn" href="mailto:stas@zavodsvay.ru?subject=Расчёт%20стоимости%20работ">Написать на почту</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2008–2026 ООО «Гефест». Ямобур-вездеход, Пермь.</span>
+    <span>ул. Промышленная, 115 · <a href="tel:+73422776576">+7 (342) 277-65-76</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

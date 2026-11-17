@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /design/
 
 Sitemap: https://yamobur-vezdehod.ru/sitemap.xml

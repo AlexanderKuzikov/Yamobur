@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Варианты главной — Ямобур</title>
+<style>
+:root{--ink:#14161a;--muted:#5f6672;--line:#dfe2e7;--bg:#f3f4f2;--white:#fff;--accent:#d9481f}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 "Segoe UI",system-ui,sans-serif}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.top{border-bottom:1px solid var(--line);background:var(--white)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.top a{text-decoration:none;font-size:14px;min-height:44px;display:inline-flex;align-items:center}
+.top .mark{font-family:ui-monospace,Consolas,monospace;font-size:11px;letter-spacing:.12em;color:var(--muted)}
+main{padding:56px 0 72px}
+h1{font-size:clamp(30px,4vw,46px);letter-spacing:-.03em;line-height:1.05;max-width:18ch}
+.lead{margin-top:16px;max-width:64ch;color:var(--muted);font-size:17px}
+.cards{list-style:none;display:grid;gap:28px;margin-top:44px}
+.card{display:grid;grid-template-columns:1.15fr .85fr;background:var(--white);border:1px solid var(--line);overflow:hidden}
+.shot{display:block;border-right:1px solid var(--line);background:#e9eae7;min-height:300px}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .3s}
+.card:hover .shot img{transform:scale(1.015)}
+.body{padding:30px 32px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.num{font-family:ui-monospace,Consolas,monospace;font-size:12px;color:var(--accent);letter-spacing:.1em}
+h2{font-size:26px;letter-spacing:-.025em;line-height:1.15}
+.body p{font-size:15px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:12px;border:1px solid var(--line);padding:4px 10px;color:var(--muted)}
+.btn{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+.btn:hover{background:var(--accent)}
+.note{margin-top:40px;font-size:13px;color:var(--muted);max-width:70ch}
+footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--muted)}
+@media(max-width:860px){
+  .card{grid-template-columns:1fr}
+  .shot{border-right:0;border-bottom:1px solid var(--line);min-height:0}
+  .shot img{height:auto}
+  .body{padding:24px}
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  main{padding:36px 0 52px}
+  .body{padding:20px 18px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a href="../index.html">← на сайт</a>
+    <span class="mark">внутренняя страница · noindex</span>
+  </div>
+</header>
+<main class="wrap">
+  <h1>Варианты главной страницы</h1>
+  <p class="lead">Несколько направлений оформления на одном и том же контенте. Скриншоты сняты на ширине 1440 px, каждый вариант — отдельный статичный файл: можно открыть, пролистать и сравнить на телефоне. Список собирается по папкам <code>site/design/</code>, поэтому количество вариантов может быть любым.</p>
+  <ol class="cards">
+      <li class="card">
+        <a class="shot" href="1/index.html"><img src="1/preview.jpg" width="1440" height="1000" alt="Скриншот варианта «Чертёж»" loading="eager"></a>
+        <div class="body">
+          <div class="num">01</div>
+          <h2>Чертёж</h2>
+          <p>Светлый индустриальный вариант: бумажный фон, сетка, моно-подписи и оранжевый акцент. Секции пронумерованы, услуги — строками вместо карточек, техника — таблицами ТТХ. Хорошо читается на телефоне и не зависит от качества фото.</p>
+          <div class="tags"><span>светлый</span><span>индустриальный</span><span>минимализм</span></div>
+          <a class="btn" href="1/index.html">Открыть вариант</a>
+        </div>
+      </li>
+      <li class="card">
+        <a class="shot" href="2/index.html"><img src="2/preview.jpg" width="1440" height="1000" alt="Скриншот варианта «Ночная смена»" loading="lazy"></a>
+        <div class="body">
+          <div class="num">02</div>
+          <h2>Ночная смена</h2>
+          <p>Тёмный кинематографичный вариант: фото во весь экран, крупная типографика, янтарный акцент и цифры в одну строку. Самый эмоциональный — ставит на технику и масштаб работ.</p>
+          <div class="tags"><span>тёмный</span><span>фото</span><span>контраст</span></div>
+          <a class="btn" href="2/index.html">Открыть вариант</a>
+        </div>
+      </li>
+      <li class="card">
+        <a class="shot" href="3/index.html"><img src="3/preview.jpg" width="1440" height="1000" alt="Скриншот варианта «Договор»" loading="lazy"></a>
+        <div class="body">
+          <div class="num">03</div>
+          <h2>Договор</h2>
+          <p>Светлый B2B-вариант: белый фон, синий акцент, блок с ориентиром по стоимости в первом экране и таблица сравнения машин со ставками. Самый спокойный и «продающий» — рассчитан на подрядчиков и юрлиц.</p>
+          <div class="tags"><span>светлый</span><span>B2B</span><span>доверие</span></div>
+          <a class="btn" href="3/index.html">Открыть вариант</a>
+        </div>
+      </li>
+  </ol>
+  <p class="note">Страница собрана скриптом <code>tools/build-design.mjs</code>. Чтобы добавить вариант, положите папку с <code>index.html</code> и <code>meta.json</code> в <code>site/design/</code> и запустите сборку заново.</p>
+</main>
+<footer><div class="wrap">Ямобур-вездеход · варианты дизайна · 2026-11-17</div></footer>
+</body>
+</html>
