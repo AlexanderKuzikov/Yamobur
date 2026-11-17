@@ -7,7 +7,7 @@
 - Static HTML, zero deps
 - Лендинг услуги ямобура-вездехода (Гефест, Пермь)
 - Рабочая копия: `D:\laragon\www\yamobur\` (клон репо, Laragon: http://localhost/yamobur/site/)
-- Прод: `yamobur-vezdehod.ru` на crafty, каталог `www/yamobur-vezdehod.ru/`; деплой — содержимое `site/` целиком. Домен, DNS, SSL, Вебмастер и Метрика — `docs/CONTEXT.md`, раздел «Домен, хостинг и деплой»
+- Прод: `yamobur-vezdehod.ru` на собственном VPS Sat (Selectel, `135.106.192.125`), Caddy, каталог `/var/www/sites/yamobur_vezdehod_ru/public`; деплой — содержимое `site/` целиком. Домен, DNS, SSL, Вебмастер и Метрика — `docs/CONTEXT.md`, раздел «Домен, хостинг и деплой»; инфраструктура — проект `Sites`
 - Единственный проект по сайту — этот репозиторий; `yamobur-vezdehod.ru` сведён к указателю
 
 ## Structure
