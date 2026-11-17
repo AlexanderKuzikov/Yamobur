@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Сигнальный — вариант главной</title>
+<meta name="description" content="Плакатный вариант: чёрный, тёплый белый и сигнальный жёлтый, крупная сжатая типографика.">
+<style>
+:root{
+  --paper:#f2efe6; --ink:#0c0c0c; --yellow:#f5c400; --cream:#efece2;
+  --muted:#5f5d55; --line:#0c0c0c; --red:#d0341f;
+  --cond:"Arial Narrow","Segoe UI",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:16px/1.55 "Segoe UI",system-ui,sans-serif}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;background:var(--ink);color:var(--yellow);text-decoration:none;font-weight:700;border:2px solid var(--ink);transition:background .15s,color .15s}
+.btn:hover{background:var(--yellow);color:var(--ink)}
+.btn.line{background:transparent;color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--yellow)}
+
+/* header */
+.top{background:var(--ink);color:var(--cream);border-bottom:6px solid var(--yellow)}
+.top .wrap{display:flex;align-items:center;gap:28px;min-height:78px}
+.brand{display:inline-flex;align-items:center;gap:0;background:var(--yellow);color:var(--ink);padding:10px 14px;text-decoration:none;font-family:var(--cond);font-weight:700;font-size:21px;letter-spacing:-.01em;line-height:1}
+.brand small{display:block;font-family:"Segoe UI",sans-serif;font-size:9px;font-weight:600;letter-spacing:.14em;margin-top:5px}
+.nav{display:flex;gap:24px;margin-left:auto}
+.nav a{font-size:14px;color:#d8d4c8;text-decoration:none;white-space:nowrap;padding:14px 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--yellow);border-color:var(--yellow)}
+.phone{font-family:var(--cond);font-size:20px;font-weight:700;color:var(--yellow);text-decoration:none;white-space:nowrap;padding:12px 0}
+
+/* hero */
+.hero{padding:56px 0 0}
+.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
+.kicker{display:inline-block;background:var(--ink);color:var(--yellow);font-size:11px;font-weight:700;letter-spacing:.18em;padding:8px 12px;margin-bottom:22px}
+h1{font-family:var(--cond);font-size:clamp(44px,6.4vw,88px);line-height:.92;letter-spacing:-.02em;font-weight:700;text-transform:none}
+h1 mark{background:var(--yellow);color:var(--ink);padding:0 .06em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lead{margin-top:22px;font-size:18px;color:#3f3e38;max-width:48ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.photo{position:relative;border:6px solid var(--ink)}
+.photo img{width:100%;height:430px;object-fit:cover}
+.hazard{height:16px;background:repeating-linear-gradient(45deg,var(--ink) 0 16px,var(--yellow) 16px 32px);border-top:6px solid var(--ink)}
+
+/* stats */
+.stats{background:var(--ink);color:var(--cream);margin-top:56px}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:26px;padding-bottom:26px}
+.stats b{display:block;font-family:var(--cond);font-size:34px;line-height:1;color:var(--yellow)}
+.stats span{font-size:12px;color:#c9c5b9;display:block;margin-top:6px}
+
+/* sections */
+section{padding:64px 0}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:34px;border-bottom:6px solid var(--ink);padding-bottom:14px}
+.sec-head h2{font-family:var(--cond);font-size:clamp(30px,4vw,50px);line-height:1;letter-spacing:-.02em}
+.sec-head span{font-size:12px;letter-spacing:.12em;color:var(--muted);white-space:nowrap}
+
+/* services */
+.srv{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.srv a{display:grid;grid-template-columns:48px 1fr;gap:16px;border:2px solid var(--ink);padding:20px;text-decoration:none;background:var(--paper);transition:background .15s}
+.srv a:hover{background:#fff}
+.srv .n{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--yellow);font-family:var(--cond);font-weight:700;font-size:20px}
+.srv h3{font-size:19px;line-height:1.2;letter-spacing:-.01em}
+.srv p{grid-column:2;font-size:14px;color:var(--muted);margin-top:6px}
+
+/* machines */
+.mach{border-top:2px solid var(--ink)}
+.mach .row{display:grid;grid-template-columns:1fr 1.4fr 200px;gap:24px;align-items:center;padding:22px 0;border-bottom:2px solid var(--ink)}
+.mach h3{font-family:var(--cond);font-size:24px;line-height:1.05}
+.mach .sub{font-size:13px;color:var(--muted);margin-top:4px}
+.mach dl{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 16px}
+.mach dt{font-size:10px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.mach dd{font-weight:700;font-size:15px}
+.mach .price{background:var(--yellow);border:2px solid var(--ink);padding:14px 16px;font-family:var(--cond);font-size:24px;font-weight:700;text-align:center;white-space:nowrap}
+
+/* works */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.work{border:2px solid var(--ink);background:var(--paper)}
+.work img{width:100%;height:210px;object-fit:cover;border-bottom:2px solid var(--ink)}
+.work .cap{padding:14px 16px 16px}
+.work h3{font-size:16px}
+.work p{font-size:13px;color:var(--muted);margin-top:3px}
+
+/* cta */
+.cta{background:var(--yellow);border-top:6px solid var(--ink);border-bottom:6px solid var(--ink);padding:56px 0}
+.cta .wrap{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:28px}
+.cta h2{font-family:var(--cond);font-size:clamp(34px,4.8vw,64px);line-height:.95;letter-spacing:-.02em;max-width:15ch}
+.cta p{margin-top:10px;font-size:16px}
+.cta .big{font-family:var(--cond);font-size:clamp(30px,3.6vw,46px);font-weight:700;text-decoration:none;border-bottom:4px solid var(--ink);padding:6px 0 2px;white-space:nowrap}
+.cta .side{text-align:right}
+.cta .side span{display:block;margin-top:10px;font-size:12px;letter-spacing:.06em}
+
+/* footer */
+footer{background:var(--ink);color:#c9c5b9;font-size:13px;padding:26px 0 56px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+footer a{color:var(--yellow);text-decoration:none;padding:12px 0;display:inline-block}
+
+@media(max-width:920px){
+  .hero .wrap{grid-template-columns:1fr;gap:32px}
+  .photo img{height:340px}
+  .srv{grid-template-columns:1fr}
+  .mach .row{grid-template-columns:1fr;gap:12px}
+  .mach .price{justify-self:start;text-align:left}
+  .works{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .wrap{padding:0 18px}
+  .top .wrap{flex-wrap:wrap;gap:10px 14px;padding:12px 18px}
+  .brand{font-size:19px}
+  .nav{order:3;width:100%;margin:0;gap:18px}
+  .phone{margin-left:auto}
+  .stats .wrap{grid-template-columns:1fr 1fr;gap:18px}
+  .works{grid-template-columns:1fr}
+  section{padding:48px 0}
+  .cta .side{text-align:left}
+  .sec-head span{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../../index.html"><span>Ямобур-вездеход<small>Гефест · Пермь</small></span></a>
+    <nav class="nav">
+      <a href="../../harakteristiki.html">Характеристики</a>
+      <a href="../../ceny.html">Цены</a>
+      <a href="../../raboty.html">Работы</a>
+      <a href="../../statyi.html">Статьи</a>
+    </nav>
+    <a class="phone" href="tel:+73422776576">+7 (342) 277-65-76</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Аренда бурильно-крановых машин</span>
+      <h1>Доезжает <mark>делает</mark></h1>
+      <p class="lead">Бурение до 30 метров, сваи до 325 мм, опоры ВЛ. Полноприводные машины 6×6 и 4×4, круглый год.</p>
+      <div class="actions">
+        <a class="btn" href="tel:+73422776576">Позвонить</a>
+        <a class="btn line" href="../../ceny.html">Цены на аренду</a>
+      </div>
+    </div>
+    <div class="photo"><img src="../../img/kamaz-4326.jpg" alt="Ямобур-вездеход КАМАЗ 4326"></div>
+  </div>
+</section>
+
+<div class="hazard"></div>
+
+<div class="stats">
+  <div class="wrap">
+    <div><b>2008</b><span>год с которого работаем</span></div>
+    <div><b>800 мм</b><span>диаметр бурения</span></div>
+    <div><b>30 м</b><span>глубина скважин</span></div>
+    <div><b>4 часа</b><span>минимальный заказ</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head"><h2>Что делаем</h2><span>01 / услуги</span></div>
+    <div class="srv">
+      <a href="../../stati/burenie-skvazhin-kolodcy-opory-vl.html"><span class="n">01</span><div><h3>Бурение под буронабивные сваи</h3><p>Диаметры 100–800 мм, грунты до 3-й категории.</p></div></a>
+      <a href="../../stati/montazh-vintovykh-svaj.html"><span class="n">02</span><div><h3>Монтаж винтовых свай</h3><p>Ствол 60–325 мм, сваи «Гефест» и сторонних заводов.</p></div></a>
+      <a href="../../stati/lidernoe-burenie.html"><span class="n">03</span><div><h3>Лидерное бурение</h3><p>Мёрзлые грунты, плотные пески, стеснённая застройка.</p></div></a>
+      <a href="../../stati/burenie-skvazhin-kolodcy-opory-vl.html"><span class="n">04</span><div><h3>Скважины для колодцев</h3><p>До 1200 мм и до 30 метров в глубину.</p></div></a>
+      <a href="../../stati/burenie-skvazhin-kolodcy-opory-vl.html"><span class="n">05</span><div><h3>Установка опор ВЛ</h3><p>Монтаж с люльки, бурение под опоры.</p></div></a>
+      <a href="../../stati/buronabivnye-svai-uplotneniya.html"><span class="n">06</span><div><h3>Сваи уплотнения DDS</h3><p>Раскатка скважин без выноса грунта.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="machines">
+  <div class="wrap">
+    <div class="sec-head"><h2>Парк</h2><span>02 / техника</span></div>
+    <div class="mach">
+      <div class="row">
+        <div><h3>Урал 5557</h3><p class="sub">Аналог УБМ-85 · 6×6</p></div>
+        <dl><div><dt>Стрела</dt><dd>14 м</dd></div><div><dt>Момент</dt><dd>5 т·м</dd></div><div><dt>Бурение</dt><dd>до 30 м</dd></div></dl>
+        <div class="price">договорная</div>
+      </div>
+      <div class="row">
+        <div><h3>КАМАЗ 4326</h3><p class="sub">Гидрокабестан · 4×4</p></div>
+        <dl><div><dt>Стрела</dt><dd>10 м</dd></div><div><dt>Момент</dt><dd>1 т·м</dd></div><div><dt>Бурение</dt><dd>до 830 мм</dd></div></dl>
+        <div class="price">1700 ₽/час</div>
+      </div>
+      <div class="row">
+        <div><h3>КАМАЗ 43101</h3><p class="sub">AICHI D-705 · 6×6 · люлька</p></div>
+        <dl><div><dt>Стрела</dt><dd>12 м</dd></div><div><dt>Момент</dt><dd>1 т·м</dd></div><div><dt>Бурение</dt><dd>до 10 м</dd></div></dl>
+        <div class="price">1800 ₽/час</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="sec-head"><h2>Объекты</h2><span>03 / работы</span></div>
+    <div class="works">
+      <article class="work"><img src="../../img/rabota-oktyabrya-1.jpg" alt="Монтаж свай на ул. 25 Октября"><div class="cap"><h3>ул. 25 Октября, 106</h3><p>СВС 219/500 и 159/450</p></div></article>
+      <article class="work"><img src="../../img/rabota-savino-1.jpg" alt="Сваи в аэропорту Большое Савино"><div class="cap"><h3>Аэропорт Большое Савино</h3><p>СВС-219/550-8000</p></div></article>
+      <article class="work"><img src="../../img/rabota-rakitnaya-1.jpg" alt="Монтаж свай на ул. Ракитная"><div class="cap"><h3>ул. Ракитная, 38</h3><p>ВСГ-3 159/450-7000</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div>
+      <h2>Нужна машина на объект?</h2>
+      <p>Скажите грунт и объём — назовём цену и сроки.</p>
+    </div>
+    <div class="side">
+      <a class="big" href="tel:+73422776576">+7 (342) 277-65-76</a>
+      <span>ежедневно 8:00–20:00 · stas@zavodsvay.ru</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2008–2026 ООО «Гефест». Ямобур-вездеход, Пермь.</span>
+    <span>ул. Промышленная, 115 · <a href="tel:+79028016576">+7 (902) 801-65-76</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -246,4 +246,9 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(
 `;
 
 writeFileSync(join(designDir, 'index.html'), html);
-console.log(`index: ${variants.length} варианта`);
+const plural = (n, one, few, many) => {
+  const m10 = n % 10, m100 = n % 100;
+  const word = m10 === 1 && m100 !== 11 ? one : m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14) ? few : many;
+  return `${n} ${word}`;
+};
+console.log(`index: ${plural(variants.length, 'вариант', 'варианта', 'вариантов')}`);
