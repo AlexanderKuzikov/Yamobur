@@ -12,8 +12,8 @@
 
 ## Structure
 - `site/` — статик-сайт (index, harakteristiki, ceny, raboty, statyi, stati/*.html, css/, js/, img/, robots.txt, sitemap.xml)
-- `site/design/` — внутренняя страница вариантов главной (`/design`), `index.html` генерируется скриптом
-- `tools/` — dev-скрипты без зависимостей: `build-design.mjs` (сборка `/design`), `check-layout.mjs` (проверка вёрстки на 390/768/1440)
+- `tools/` — dev-скрипты без зависимостей: `build-design.mjs` (сборка страницы вариантов), `check-layout.mjs` (проверка вёрстки на 390/768/1440)
+- `archive/` — архив: старый светлый сайт, пять вариантов дизайна, черновики v2. Не деплоится
 - `*.html` + `*_files/` в корне — Joomla-сохранёнки, источник контента (НЕ трогать, не деплоить)
 
 ## Do NOT touch
