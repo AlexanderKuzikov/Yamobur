@@ -78,7 +78,7 @@ img{max-width:100%;height:auto;display:block}
 
 /* ---------- Machines ---------- */
 .machine{display:flex;gap:32px;align-items:flex-start}
-.machine img{width:46%;aspect-ratio:3/2;object-fit:cover;border:1px solid var(--line);filter:saturate(.9)}
+.machine img{width:46%;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--line);filter:saturate(.9)}
 .machine h3{font-size:22px;letter-spacing:-.02em;margin-bottom:4px;color:var(--ink)}
 .machine .price{color:var(--amber);font-weight:700;font-size:20px;margin:10px 0 6px}
 .machine ul{margin:12px 0 0 18px;color:var(--text);font-size:15px}
@@ -101,7 +101,7 @@ h2.sub{font-size:20px;margin:34px 0 10px;color:var(--ink)}
 .work h3{font-size:19px;margin-bottom:6px;color:var(--ink)}
 .work .where{color:var(--muted);font-size:14px;margin-bottom:12px}
 .work .photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;width:50%}
-.work .photos img{border:1px solid var(--line);width:100%;height:160px;object-fit:cover;filter:saturate(.9)}
+.work .photos img{border:1px solid var(--line);width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;filter:saturate(.9)}
 
 /* ---------- Articles list ---------- */
 .article-item{background:var(--panel);border:1px solid var(--line);padding:26px}
@@ -180,7 +180,7 @@ h2.sub{font-size:20px;margin:34px 0 10px;color:var(--ink)}
   .grid-3{grid-template-columns:1fr}
   .grid-2{grid-template-columns:1fr}
   .container{padding:0 18px}
-  .work .photos img{height:200px}
+  .work .photos img{height:auto}
 }
 @media (max-width:560px){
   .logo-name{font-size:17px}
