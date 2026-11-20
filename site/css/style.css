@@ -154,6 +154,11 @@ h2.sub{font-size:20px;margin:34px 0 10px;color:var(--ink)}
 .crumbs a{text-decoration:none}
 .crumbs a:hover{color:var(--amber)}
 
+/* ---------- Disclaimer ---------- */
+.disclaimer{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;line-height:1.55;color:var(--muted);max-width:92ch}
+.disclaimer a{color:var(--muted);text-decoration:underline}
+.disclaimer a:hover{color:var(--amber)}
+
 /* ---------- Responsive ---------- */
 @media (max-width:960px){
   .grid-3{grid-template-columns:1fr 1fr}
